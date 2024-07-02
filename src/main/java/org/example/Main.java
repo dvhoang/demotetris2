@@ -37,12 +37,27 @@ public class Main{
         timer.start();
     }
 
+    int cellX = 3;
+    int cellY = 0;
+
     /**
      * <p>Tạo và bắt đầu game loop</p>
      * <p>Trò chơi được viết tiếp trong hàm này.</p>
      */
     public void runGameLoop(){
+        clearMap();
 
+        turnOnCell(cellX, cellY);
+        turnOnCell(cellX, cellY + 1);
+        turnOnCell(cellX + 1, cellY + 1);
+        turnOnCell(cellX + 1, cellY + 2);
+
+        if(cellY + 2 < getMapHeight() - 1){
+            cellY++;
+        }
+
+        setScore(100);
+        setPlayerName("Ahihi");
     }
 
     /**
@@ -57,6 +72,7 @@ public class Main{
             case KeyEvent.VK_A:
                 System.out.println("A key pressed");
                 // Thực hiện hành động khi nhấn A
+                cellX--;
                 break;
             case KeyEvent.VK_S:
                 System.out.println("S key pressed");
@@ -65,6 +81,7 @@ public class Main{
             case KeyEvent.VK_D:
                 System.out.println("D key pressed");
                 // Thực hiện hành động khi nhấn D
+                cellX++;
                 break;
             case KeyEvent.VK_SPACE:
                 System.out.println("Space key pressed");

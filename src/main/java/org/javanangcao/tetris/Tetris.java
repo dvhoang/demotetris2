@@ -154,6 +154,7 @@ public class Tetris extends JFrame {
      */
     public void setPlayerName(String playerName) {
         this.playerName = playerName;
+        this.playerLabel.setText("Player: "+playerName);
     }
 
     /**
@@ -170,6 +171,7 @@ public class Tetris extends JFrame {
      * */
     public void setScore(int score) {
         this.score = score;
+        this.scoreLabel.setText("Score: "+score);
     }
 
 }
